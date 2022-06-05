@@ -23,5 +23,20 @@ class Video{
         string getTipoVideo();
         string getNombre();
 };
+class Pelicula: public Video{
+    public:
+        Pelicula(string _tipoVideo, string _nombreVideo, string _genero, 
+            int _anioLanzamiento, int _duracion);
+        Pelicula(string _tipoVideo, string _nombreVideo, string _genero, 
+            int _calificacion, int _anioLanzamiento, int _duracion);
 
+};
+class Serie: public Video{
+    public:
+        Serie(string _tipoVideo, string _nombreVideo, string _genero, 
+            int _anioLanzamiento, int _duracion);
+        Serie(string _tipoVideo, string _nombreVideo, string _genero, 
+            int _calificacion, int _anioLanzamiento, int _duracion);
+
+};
 #endif

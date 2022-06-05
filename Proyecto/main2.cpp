@@ -1,7 +1,5 @@
 #include <iostream>
 #include "Video.h"
-#include "Serie.h"
-#include "Pelicula.h"
 #include <vector>
 
 using std::vector;
