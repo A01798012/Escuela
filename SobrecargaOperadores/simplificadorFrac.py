@@ -19,4 +19,8 @@ def simplificar(n, d):
     return (nf,df)
 
 
-print(simplificar(7,21))
+resultado = 0
+for i in range(1,1001):
+    resultado += i**2
+
+print(resultado)
