@@ -10,13 +10,17 @@ using std::cin;
 
 int main(){
 
-    Pelicula p1("Pelicula", "Dune", "Ciencia Ficcion", 2021, 155);
-    Pelicula p2("Pelicula", "Arrival", "Ciencia Ficcion", 2016, 116);
-    Serie s1("Serie", "Our beloved summer", "KDrama", 2021, 1000);
-    Serie s2("Serie", "Kingdom", "Kdrama", 2020, 10000);
-    Serie s3("Serie", "Facultad de derecho","KDrama" ,2021, 19021);
+    Video *p1;
+    Video *p2;
+    Video *s1, *s2, *s3;
 
-    vector<Video> videos;
+    p1 = new Pelicula("Pelicula", "Dune", "Ciencia Ficcion", 2021, 155, 70);
+    p2 = new Pelicula("Pelicula", "Arrival", "Ciencia Ficcion", 2016, 116, 52);
+    s1 = new Serie("Serie", "Our beloved summer", "KDrama", 2021, 1000, 16);
+    s2 = new Serie("Serie", "Kingdom", "Kdrama", 2020, 10000, 6);
+    s3 = new Serie("Serie", "Facultad de derecho","KDrama" ,2021, 19021, 16);
+
+    vector<Video*> videos;
 
     videos.push_back(p1);
     videos.push_back(p2);
@@ -35,11 +39,11 @@ int main(){
 
         if (option == 1){
             for (int i = 0; i < videos.size(); i++){
-                videos[i].muestraDatos();
+                videos[i] -> muestraDatos();
             }
         }else if(option == 2){
             for(int i = 0; i < videos.size(); i++)
-                cout << i << " - " << videos[i].getNombre() << "(" << videos[i].getTipoVideo() << ")" << endl;
+                cout << i << " - " << (videos[i] -> getNombre()) << "(" << videos[i] -> getTipoVideo() << ")" << endl;
 
             cout << "Ingresa el numero del video a calificar: ";
             cin >> nCalif;
@@ -49,7 +53,7 @@ int main(){
             }else {
                 cout << "Pon una calificacion: ";
                 cin >> _calificacion;
-                videos[nCalif].calificaVideo(_calificacion);
+                videos[nCalif] -> calificaVideo(_calificacion);
             }
 
         }else if (option == -1){
